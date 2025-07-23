@@ -638,7 +638,7 @@ def create_gui():
     subtitle_lang_combo = ttk.Combobox(
         subtitle_frame, 
         textvariable=subtitle_lang_var, 
-        width=20,
+        width=60,
         state=tk.DISABLED
     )
     subtitle_lang_combo.pack(side=tk.LEFT)
