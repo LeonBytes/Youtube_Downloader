@@ -12,6 +12,7 @@ A desktop YouTube video and subtitle downloader built with Python and yt-dlp. It
 
 - 支持从 360p 到 4K 的多种分辨率
 - 支持人工字幕和自动生成字幕，并可选择语言
+- 支持单独下载 MP3、M4A、WAV 或原始最佳音频
 - 自动加载视频信息和缩略图
 - 支持中文与英文界面切换
 - 显示实时下载进度
@@ -52,6 +53,12 @@ choco install ffmpeg
 python youtube_multisub.py
 ```
 
+仅下载音频：
+
+```bash
+python youtube_audio.py
+```
+
 其他版本：
 
 ```bash
@@ -90,6 +97,7 @@ python youtube_downloader.py # 基础版本
 
 - Multiple resolutions from 360p to 4K
 - Manual and automatically generated subtitles with language selection
+- Audio-only downloads as MP3, M4A, WAV, or the best original format
 - Automatic video metadata and thumbnail loading
 - Chinese and English user interfaces
 - Real-time download progress
@@ -128,6 +136,12 @@ Run the full version with multi-subtitle support:
 
 ```bash
 python youtube_multisub.py
+```
+
+Download audio only:
+
+```bash
+python youtube_audio.py
 ```
 
 Other versions:
