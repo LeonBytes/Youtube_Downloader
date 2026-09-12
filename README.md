@@ -13,6 +13,7 @@ A desktop YouTube video and subtitle downloader built with Python and yt-dlp. It
 - 支持从 360p 到 4K 的多种分辨率
 - 支持人工字幕和自动生成字幕，并可选择语言
 - 支持单独下载 MP3、M4A、WAV 或原始最佳音频
+- 使用 OpenAI Whisper 在本地转写英语语音并生成英中对照学习材料
 - 自动加载视频信息和缩略图
 - 支持中文与英文界面切换
 - 显示实时下载进度
@@ -59,6 +60,20 @@ python youtube_multisub.py
 python youtube_audio.py
 ```
 
+### Whisper 英中对照学习工具
+
+该工具在本机将英语音频或视频转写成英文，再使用本地翻译模型生成中文。它会导出带时间戳的 TXT、CSV，以及可以隐藏英文答案的中译英练习网页。
+
+```bash
+python -m pip install -r requirements-transcription.txt
+python whisper_bilingual.py
+```
+
+首次运行会下载所选的 Whisper 模型和
+`Helsinki-NLP/opus-mt-en-zh` 翻译模型；下载完成后可以离线处理。
+Whisper 需要系统中已安装 FFmpeg。默认的 `base` 模型速度较快；
+`small` 或 `medium` 通常更准确，但运行更慢且占用更多内存。
+
 其他版本：
 
 ```bash
@@ -98,6 +113,7 @@ python youtube_downloader.py # 基础版本
 - Multiple resolutions from 360p to 4K
 - Manual and automatically generated subtitles with language selection
 - Audio-only downloads as MP3, M4A, WAV, or the best original format
+- Local English transcription with OpenAI Whisper and bilingual study materials
 - Automatic video metadata and thumbnail loading
 - Chinese and English user interfaces
 - Real-time download progress
@@ -143,6 +159,23 @@ Download audio only:
 ```bash
 python youtube_audio.py
 ```
+
+### Whisper bilingual study tool
+
+This tool transcribes English audio or video locally, translates each segment
+into Chinese with a local translation model, and exports timestamped TXT and
+CSV files plus a practice webpage that hides the English answers.
+
+```bash
+python -m pip install -r requirements-transcription.txt
+python whisper_bilingual.py
+```
+
+The selected Whisper model and the `Helsinki-NLP/opus-mt-en-zh` translation
+model are downloaded on first use. Processing can run offline after the model
+files have been cached. Whisper requires FFmpeg. The default `base` model is
+relatively fast; `small` and `medium` are generally more accurate but need
+more memory and processing time.
 
 Other versions:
 

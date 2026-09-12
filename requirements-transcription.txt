@@ -1,0 +1,6 @@
+# Optional dependencies for whisper_bilingual.py
+openai-whisper
+torch
+transformers
+sentencepiece
+sacremoses
